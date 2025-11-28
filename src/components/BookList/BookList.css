@@ -1,0 +1,109 @@
+.bookList {
+  padding: var(--spacing-xl) var(--spacing-lg);
+  max-width: 1400px;
+  margin: 0 auto;
+  min-height: 100vh;
+}
+
+.bookList__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-xl);
+  padding-bottom: var(--spacing-lg);
+  border-bottom: 2px solid var(--color-gray-200);
+  flex-wrap: wrap;
+  gap: var(--spacing-md);
+}
+
+.bookList__titleContainer {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.bookList__title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--color-gray-900);
+  letter-spacing: -0.5px;
+}
+
+.bookList__subtitle {
+  font-size: 0.95rem;
+  color: var(--color-gray-600);
+  margin: 0;
+}
+
+.bookList__addButton {
+  padding: 12px 24px;
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  border-radius: var(--radius-md);
+  font-size: 0.95rem;
+  font-weight: 600;
+  box-shadow: var(--shadow-primary);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.bookList__addButton:hover {
+  background-color: var(--color-primary-dark);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(74, 144, 164, 0.35);
+}
+
+.bookList__addButton:active {
+  transform: translateY(0);
+}
+
+.bookList__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+  gap: var(--spacing-lg);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .bookList {
+    padding: var(--spacing-lg) var(--spacing-md);
+  }
+
+  .bookList__header {
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
+  }
+
+  .bookList__titleContainer {
+    align-items: center;
+  }
+
+  .bookList__title {
+    font-size: 1.75rem;
+  }
+
+  .bookList__addButton {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .bookList__grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-md);
+  }
+}
+
+@media (max-width: 480px) {
+  .bookList {
+    padding: var(--spacing-md);
+  }
+
+  .bookList__title {
+    font-size: 1.5rem;
+  }
+}
